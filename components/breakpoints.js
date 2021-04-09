@@ -1,27 +1,27 @@
 const size = {
-  xs: "320px",
-  sm: "500px",
-  md: "768px",
-  lg: "1200px",
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
 };
-const device = {
-  xs: `(min-width: ${size.xs})`,
-  sm: `(min-width: ${size.sm})`,
-  md: `(min-width: ${size.sm})`,
-  lg: `(min-width: ${size.lg})`,
+
+export const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`,
 };
-export default { size, device };
 
 // How to use it:
-// import breakpoint from 'Commons/breakpoints';
-// const Component = styled.div`
-//     @media only screen and ${breakpoint.device.xs}{
-//         display: none;
-//     }
-//     @media only screen and ${breakpoint.device.sm}{
-//         display: flex;
-//     }
-//     @media only screen and ${breakpoint.device.lg}{
-//         display: flex;
-//     }
-// `;
+
+// import { device } from "../components/breakpoints";
+// @media ${device.laptop} {
+//   color: red;
+// }
