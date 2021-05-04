@@ -3,7 +3,7 @@ import { device } from "../components/breakpoints";
 
 export const NavbarContainer = styled.nav`
   position: fixed;
-  top: 0;
+  top: ${({ visible }) => (visible ? "0" : "-80px")};
   left: 0;
   right: 0;
   width: 50vw;
@@ -14,6 +14,7 @@ export const NavbarContainer = styled.nav`
   justify-content: space-around;
   align-items: flex-start;
   padding: 2rem 0;
+  transition: all 0.4s ease-in-out;
 `;
 export const NavItem = styled.div`
   position: relative;
@@ -87,10 +88,9 @@ export const Hamburger = styled.button`
 export const NavigationList = styled.ul`
   background: ${({ theme }) => theme.colors.primaryDark};
   display: flex;
-  padding: 6rem 1rem 0 1rem;
   margin: 0;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
