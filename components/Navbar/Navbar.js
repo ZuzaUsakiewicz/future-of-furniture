@@ -39,7 +39,7 @@ function Navbar() {
           </NavItem>
         </a>
       </Link>
-      <HamburgerMenu />
+      <HamburgerMenu handleScroll={handleScroll} />
       <Link href="/">
         <a>
           <NavItem>

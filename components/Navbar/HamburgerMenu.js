@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   HamburgerMenuContainer,
@@ -6,15 +6,22 @@ import {
   NavigationList,
 } from "../../styles/Navbar.styled";
 
-function HamburgerMenu() {
+function HamburgerMenu({ handleScroll }) {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
     setOpen(!open);
   };
   const close = () => setOpen(false);
+
+  useEffect(() => {
+    if (open) {
+      window.addEventListener("scroll", close);
+    }
+  }, [handleScroll]);
+
   return (
-    <HamburgerMenuContainer>
+    <HamburgerMenuContainer handleScroll={handleScroll}>
       <Hamburger open={open} onClick={toggleOpen}>
         <div />
         <div />
